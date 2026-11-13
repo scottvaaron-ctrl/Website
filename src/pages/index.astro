@@ -2,32 +2,43 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { profile, proof, paths, experience } from '../data/site';
+import { profile, proof, paths, tracks, now } from '../data/site';
 import { url } from '../lib/url';
 
 const featured = (await getCollection('projects', ({ data }) => data.featured && !data.hidden))
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 3);
 const initials = profile.name.split(' ').map((p) => p[0]).join('');
+const ops = tracks.find((t) => t.id === 'operations')!.jobs;
+const biz = tracks.find((t) => t.id === 'business')!.jobs;
+const timeline = [ops[0], biz[0], ops[1], ops[2]];
 ---
 <Base>
   <section class="hero wide">
     <div>
-      <span class="kicker">Operations · Consulting · Builder</span>
-      <h1>{profile.name}</h1>
+      <span class="kicker">Operations · Consulting · Policy · Technology</span>
+      <h1 class="display">{profile.name}</h1>
       <p class="tagline">{profile.tagline}</p>
       <ul class="roles">{profile.roles.map((r) => <li class="tag">{r}</li>)}</ul>
     </div>
     {profile.headshot
-      ? <img class="headshot" src={url(profile.headshot)} alt={`Photo of ${profile.name}`} width="176" height="176" />
+      ? <img class="headshot" src={url(profile.headshot)} alt={`Photo of ${profile.name}`} width="208" height="208" />
       : <div class="headshot" aria-hidden="true">{initials}</div>}
+  </section>
+
+  <section class="band wide" aria-labelledby="proof">
+    <h2 id="proof" class="kicker">By the numbers</h2>
+    <div class="proof">
+      {proof.map((n) => <div><strong>{n.value}</strong><span>{n.label}</span></div>)}
+    </div>
   </section>
 
   <section class="section wide" aria-labelledby="start">
     <h2 id="start" class="kicker">Start here</h2>
     <div class="paths">
-      {paths.map((p) => (
+      {paths.map((p, i) => (
         <a class="path" href={url(p.href)}>
+          <span class="path-n">0{i + 1}</span>
           <span class="kicker">{p.kicker}</span>
           <h3>{p.title}</h3>
           <p>{p.text}</p>
@@ -37,39 +48,49 @@ const initials = profile.name.split(' ').map((p) => p[0]).join('');
     </div>
   </section>
 
-  <section class="section wide" aria-labelledby="proof">
-    <h2 id="proof" class="kicker">By the numbers</h2>
-    <div class="proof">
-      {proof.map((n) => <div><strong>{n.value}</strong><span>{n.label}</span></div>)}
-    </div>
-  </section>
-
   <section class="section wide" aria-labelledby="work">
     <div class="section-head">
-      <h2 id="work">Selected work</h2>
+      <h2 id="work">Featured work</h2>
       <a class="mono" href={url('projects/')}>All projects →</a>
     </div>
-    <div class="cards">{featured.map((p) => <ProjectCard project={p} />)}</div>
+    <div class="cards cards-feature">{featured.map((p) => <ProjectCard project={p} large />)}</div>
   </section>
 
-  <section class="section" aria-labelledby="now">
+  <blockquote class="pull wide">
+    <p>“The tedious work is done by agents, which allows the humans to ideate and improve.”</p>
+    <cite>Aaron Scott</cite>
+  </blockquote>
+
+  <section class="section wide" aria-labelledby="exp">
     <div class="section-head">
-      <h2 id="now">Experience</h2>
+      <h2 id="exp">Experience</h2>
       <a class="mono" href={url('experience/')}>Full experience →</a>
     </div>
     <ul class="timeline">
-      {experience.slice(0, 3).map((e) => (
+      {timeline.map((e) => (
         <li>
           <span class="meta">{e.period}</span>
-          <div><h3>{e.title}</h3><p class="org" style="margin:0">{e.org}</p></div>
+          <div>
+            <h3>{e.org}</h3>
+            <p class="job-title" style="margin-bottom:0.4rem">{e.title}</p>
+            <p class="muted" style="margin:0">{e.summary ?? e.story[0]}</p>
+          </div>
         </li>
       ))}
     </ul>
   </section>
 
-  <section class="section" aria-labelledby="contact">
-    <h2 id="contact">Let's talk</h2>
-    <p class="muted">Hiring, consulting, collaborating, or just curious about something I built.</p>
-    <a class="button" href={`mailto:${profile.email}`}>Email me</a>
+  <section class="section split wide" aria-labelledby="now">
+    <div>
+      <span class="kicker">Now · {now.updated}</span>
+      <h2 id="now">Current focus</h2>
+      <ul class="now-mini">{now.items.slice(0, 3).map((i) => <li>{i}</li>)}</ul>
+      <a class="mono" href={url('now/')}>View all current work →</a>
+    </div>
+    <div class="cta-box">
+      <h2>Get in touch</h2>
+      <p class="muted">For hiring, consulting and collaboration inquiries.</p>
+      <a class="button" href={url('contact/')}>Contact me</a>
+    </div>
   </section>
 </Base>

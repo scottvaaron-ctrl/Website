@@ -10,11 +10,17 @@ const projects = defineCollection({
   schema: z.object({
     title: z.string(),
     summary: z.string(), // one line, shown on cards
-    category: z.enum(['Operations', 'Media', 'Tech']),
+    category: z.enum(['Operations', 'Media', 'Tech', 'Research']),
     status: z.enum(['Live', 'Active', 'In development', 'Paused', 'Planned', 'Idea', 'Completed']),
+    statusNote: z.string().optional(), // e.g. 'Version 4'
     role: z.string(),
-    period: z.string(), // e.g. "2026 – present"
+    period: z.coerce.string(), // e.g. "2026 – present"
     tools: z.array(z.string()).default([]),
+    tags: z.array(z.string()).default([]), // used by the filter on the Projects page
+    flow: z.array(z.string()).default([]), // "How it works" steps, drawn as a row of boxes
+    image: z.string().optional(), // file in public/images/, e.g. 'images/shift-boss-room.jpg'
+    imageAlt: z.string().optional(),
+    quote: z.string().optional(), // a line in your own words, shown large
     links: z.array(z.object({ label: z.string(), url: z.string().url() })).default([]),
     featured: z.boolean().default(false), // show on the homepage
     order: z.number().default(100), // lower numbers appear first

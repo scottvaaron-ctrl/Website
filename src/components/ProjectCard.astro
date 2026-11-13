@@ -2,15 +2,23 @@
 import type { CollectionEntry } from 'astro:content';
 import { url } from '../lib/url';
 
-interface Props { project: CollectionEntry<'projects'> }
-const { project } = Astro.props;
+interface Props { project: CollectionEntry<'projects'>; large?: boolean }
+const { project, large = false } = Astro.props;
 const d = project.data;
 ---
-<a class="card" href={url(`projects/${project.id}/`)} data-category={d.category}>
+<a
+  class:list={['card', { 'card-large': large }]}
+  href={url(`projects/${project.id}/`)}
+  data-category={d.category}
+  data-status={d.status}
+  data-tags={d.tags.join('|')}
+>
+  {large && d.image && <img class="card-img" src={url(d.image)} alt="" loading="lazy" />}
   <div class="card-top">
     <span class="kicker" style="margin:0">{d.category}</span>
     <span class="status" data-s={d.status}>{d.status}</span>
   </div>
   <h3>{d.title}</h3>
   <p>{d.summary}</p>
+  {d.tags.length > 0 && <ul class="card-tags">{d.tags.map((t) => <li>{t}</li>)}</ul>}
 </a>

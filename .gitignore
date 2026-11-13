@@ -6,5 +6,5 @@ dist/
 .DS_Store
 Thumbs.db
 
-# delivery archive, safe to delete
-website-src.tgz
+# delivery archives, safe to delete
+*.tgz

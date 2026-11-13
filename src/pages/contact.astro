@@ -1,11 +1,37 @@
 ---
 import Base from '../layouts/Base.astro';
 import { profile } from '../data/site';
+import { url } from '../lib/url';
+const hasForm = profile.web3formsKey.trim().length > 0;
 ---
 <Base title="Contact" description="How to reach Aaron Scott.">
-  <span class="kicker">Contact</span>
-  <h1>Get in touch</h1>
-  <p class="tagline">Hiring for an operations role, looking for help with your restaurant, or want to talk about something I built? Email is the fastest way to reach me.</p>
-  <p><a class="button" href={`mailto:${profile.email}`}>{profile.email}</a></p>
-  <p class="muted"><a href={profile.github}>GitHub</a></p>
+  <div class="contact">
+    <span class="kicker">Contact</span>
+    <h1>Get in touch</h1>
+    <p class="tagline">For operations roles, consulting engagements with Backhouse Group, or questions about my projects, please send a message. It will come directly to my inbox.</p>
+
+    {hasForm ? (
+      <form class="form" action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+        <input type="hidden" name="access_key" value={profile.web3formsKey} />
+        <input type="hidden" name="subject" value="New message from your website" />
+        <input type="hidden" name="from_name" value="Personal website" />
+        <input type="hidden" name="redirect" value={new URL(url('contact/thanks/'), Astro.site).href} />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <label>Your name<input type="text" name="name" required autocomplete="name" /></label>
+        <label>Your email<input type="email" name="email" required autocomplete="email" /></label>
+        <label>Topic
+          <select name="topic">
+            <option>Hiring</option>
+            <option>Consulting (Backhouse Group)</option>
+            <option>A project</option>
+            <option>Something else</option>
+          </select>
+        </label>
+        <label>Message<textarea name="message" rows="6" required></textarea></label>
+        <button class="button" type="submit">Send message</button>
+      </form>
+    ) : (
+      <p><a class="button" href={`mailto:${profile.email}`}>Email me</a></p>
+    )}
+  </div>
 </Base>

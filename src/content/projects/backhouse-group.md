@@ -1,29 +1,35 @@
 ---
 title: Backhouse Group
-summary: Restaurant operations consulting. SOPs, training systems and franchise infrastructure, operator to operator.
+summary: The parent company for my ventures and an operations consulting practice for small and mid-sized businesses.
 category: Operations
 status: Active
-role: Founder
+role: Founder / CEO
 period: 05/2026 – present
+tags: [Consulting, Operations]
 tools: [TPS / Kaizen, TWI Job Instruction, SOP architecture]
+flow: [Assess, Diagnose, Standardize, Train, Audit]
 featured: true
 order: 1
 ---
 
-## The problem
+## What it is
 
-Most restaurants don't fail on the menu. They fail on the parts nobody sees: no written standards, training that lives in one person's head, and new stores that open without a system to lean on.
+Backhouse Group serves two functions. First, it is the parent company for my ventures: early-stage ventures are housed within Backhouse, and as they mature they are spun off into independent companies, with Backhouse moving into a holding-company role. AI Media Zero, StreamBot, Debauchery and Shift Boss are currently housed there.
 
-## What Backhouse does
+Second, it is an operations consulting practice for small and mid-sized businesses.
 
-- **SOPs that people actually use.** Written for the line, not the binder.
-- **Training systems.** Built on TWI Job Instruction, so a skill can be taught the same way every time.
-- **Franchise infrastructure.** The documents, audits and routines that let a concept grow past one location.
+## What the consulting looks like
 
-## Where it comes from
+- **Assessments.** End-to-end reviews of staffing, customer engagement and workflow to identify and prioritize improvements.
+- **Sales processes and SOPs.** For a local bar client, we redesigned the sales process and built standard operating procedures.
+- **Training systems** built on TWI Job Instruction, so a skill gets taught the same way every time.
 
-The playbook comes from eight years of openings, audits and turnarounds at Qdoba and a 60+ document SOP system built at Bang Cookies. See [Experience](../../experience/).
+It is a two-person practice. I set strategic direction and review my partner's work on parallel client projects.
 
-## Work with Backhouse
+## The tools behind it
 
-Email me and tell me what's breaking.
+I built the practice's internal tools: an [AI consulting assistant](../consultobot/) and a [lead research bot](../lead-research-bot/).
+
+## Where the playbook comes from
+
+Eight years of openings, audits and turnarounds at Qdoba, and a 60+ document SOP system developed at Bang Cookies. See [Experience](../../experience/).

@@ -1,25 +1,36 @@
 ---
 title: drBreakdown
-summary: A YouTube channel about what breaks and why, starting with politics and policy.
+summary: A YouTube channel explaining why laws, institutions and systems fail, beginning with politics and policy.
 category: Media
 status: In development
+statusNote: Pre-launch
 role: Creator, writer, host
 period: 2026 – present
-tools: [YouTube, Obsidian research pipeline]
+tags: [Media, Policy]
+tools: [YouTube, Obsidian research vault]
+flow: [News and research radars, Select the topic, Trace the causes, Script, Publish]
 featured: true
-order: 4
+order: 3
 ---
 
 ## The idea
 
-Every episode takes one thing that broke (a law, an institution, a system) and walks through the causes, in order, until the break makes sense. Direct cause and effect, not hot takes.
+Each episode examines one failure, whether a law, an institution or a system, and walks through its causes in order until the outcome is clear. The focus is direct cause and effect.
 
-## Status
+## Background
 
-Pre-launch. The pilot episode, *Killing an Institution Without Repealing It*, is in progress.
+Politics is where I have the deepest experience, through campaigns, county party work and university policy research. The channel begins there and will expand into other subjects.
 
-## Format
+## How it works
 
-- Short explainers on a single issue.
-- Longer deep dives with several causes.
-- YouTube Shorts.
+A set of research radars scans US news, world news, international relations and new papers, and banks story ideas in my research vault. Each week, the strongest ideas are selected for the production backlog.
+
+## Where it stands
+
+Pre-launch. The pilot, *Killing an Institution Without Repealing It*, is in progress.
+
+## The plan
+
+- One long-form deep dive a month.
+- Four shorter explainers a month, 5 to 15 minutes each.
+- Two YouTube Shorts a week.

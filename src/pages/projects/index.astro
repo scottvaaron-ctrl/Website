@@ -6,29 +6,72 @@ import ProjectCard from '../../components/ProjectCard.astro';
 const projects = (await getCollection('projects', ({ data }) => !data.hidden)).sort(
   (a, b) => a.data.order - b.data.order,
 );
-const categories = ['Operations', 'Media', 'Tech'] as const;
+const featured = projects.filter((p) => p.data.featured).slice(0, 3);
+const tags = [...new Set(projects.flatMap((p) => p.data.tags))].sort();
+const statusOrder = ['Live', 'Active', 'In development', 'Paused', 'Planned', 'Idea', 'Completed'];
+const statuses = statusOrder.filter((s) => projects.some((p) => p.data.status === s));
 ---
-<Base title="Projects" description="Operations work, media and tech projects by Aaron Scott, each labeled with its real status.">
+<Base title="Projects" description="Operations work, AI agents, apps, media and research by Aaron Scott, each labeled with its real status.">
   <div class="wide">
     <span class="kicker">Projects</span>
     <h1>Projects</h1>
-    <p class="tagline muted" style="max-width:none">Every project is labeled with where it really stands: Live, Active, Completed, In development, Paused, Planned, or Idea.</p>
+    <p class="tagline muted" style="max-width:none">Operations systems, AI agents, software, media and research. Each project is labeled with its current status.</p>
 
-    <div class="filters" role="group" aria-label="Filter projects">
-      <button type="button" data-filter="all" aria-pressed="true">All</button>
-      {categories.map((c) => <button type="button" data-filter={c} aria-pressed="false">{c}</button>)}
-    </div>
-    <div class="cards" id="project-grid">{projects.map((p) => <ProjectCard project={p} />)}</div>
+    <section class="section" aria-labelledby="feat">
+      <h2 id="feat" class="kicker">Featured</h2>
+      <div class="cards cards-feature">{featured.map((p) => <ProjectCard project={p} large />)}</div>
+    </section>
+
+    <section class="section" aria-labelledby="all">
+      <div class="section-head">
+        <h2 id="all">All projects <span class="muted count" id="count">({projects.length})</span></h2>
+      </div>
+      <div class="filter-bar">
+        <div class="filters" role="group" aria-label="Filter by tag">
+          <span class="filter-label">Tag</span>
+          <button type="button" data-tag="all" aria-pressed="true">All</button>
+          {tags.map((t) => <button type="button" data-tag={t} aria-pressed="false">{t}</button>)}
+        </div>
+        <div class="filters" role="group" aria-label="Filter by status">
+          <span class="filter-label">Status</span>
+          <button type="button" data-status="all" aria-pressed="true">All</button>
+          {statuses.map((s) => <button type="button" data-status={s} aria-pressed="false">{s}</button>)}
+        </div>
+      </div>
+      <div class="cards" id="project-grid">{projects.map((p) => <ProjectCard project={p} />)}</div>
+      <p class="muted" id="empty" hidden>No projects match both filters.</p>
+    </section>
   </div>
 
   <script>
-    const buttons = document.querySelectorAll<HTMLButtonElement>('.filters button');
+    let tag = 'all';
+    let status = 'all';
     const cards = document.querySelectorAll<HTMLElement>('#project-grid .card');
-    buttons.forEach((b) =>
+    const count = document.getElementById('count')!;
+    const empty = document.getElementById('empty')!;
+    function apply() {
+      let shown = 0;
+      cards.forEach((c) => {
+        const tags = (c.dataset.tags || '').split('|');
+        const ok = (tag === 'all' || tags.includes(tag)) && (status === 'all' || c.dataset.status === status);
+        c.hidden = !ok;
+        if (ok) shown++;
+      });
+      count.textContent = `(${shown})`;
+      empty.hidden = shown > 0;
+    }
+    document.querySelectorAll<HTMLButtonElement>('[data-tag]').forEach((b) =>
       b.addEventListener('click', () => {
-        const f = b.dataset.filter;
-        buttons.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
-        cards.forEach((c) => (c.hidden = f !== 'all' && c.dataset.category !== f));
+        tag = b.dataset.tag!;
+        document.querySelectorAll('[data-tag]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+        apply();
+      }),
+    );
+    document.querySelectorAll<HTMLButtonElement>('[data-status]').forEach((b) =>
+      b.addEventListener('click', () => {
+        status = b.dataset.status!;
+        document.querySelectorAll('[data-status]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+        apply();
       }),
     );
   </script>

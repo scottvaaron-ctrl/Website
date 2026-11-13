@@ -10,8 +10,10 @@ Built with [Astro](https://astro.build). Every push to `main` rebuilds and publi
 |---|---|
 | Name, tagline, email, headshot, homepage numbers, the three homepage doors | `src/data/site.ts` |
 | Experience, education, skills | `src/data/site.ts` |
-| The look (A editorial = cream, B bold = dark navy) | `THEME` at the top of `src/data/site.ts` |
+| The look (A editorial / B bold) | `THEME` at the top of `src/data/site.ts` |
 | About page text | `src/pages/about.astro` |
+| The Now page (what you're working on) | `now` at the bottom of `src/data/site.ts` |
+| Contact form key | `web3formsKey` in `src/data/site.ts` (see below) |
 | A project | `src/content/projects/<name>.md` |
 | Colors and fonts | `src/styles/global.css` (top of the file) |
 
@@ -22,7 +24,12 @@ Built with [Astro](https://astro.build). Every push to `main` rebuilds and publi
    - `title`, `summary` (one line, shown on cards), `role`, `period`
    - `category`: `Operations`, `Media` or `Tech`
    - `status`: `Live`, `Active`, `Completed`, `In development`, `Paused`, `Planned` or `Idea`
-   - `featured: true` puts it on the homepage (the first 3 by `order` show)
+   - `statusNote`: optional short note shown on the project page, e.g. `Version 4`
+   - `tags`: list used by the Projects page filter, e.g. `[AI agents, Operations]`
+   - `flow`: optional "How it works" steps, e.g. `[Read data, Decide, Act]`
+   - `image`: optional picture in `public/images/`, e.g. `images/my-thing.jpg`, plus `imageAlt` describing it
+   - `quote`: optional line in your own words, shown large
+   - `featured: true` puts it on the homepage and at the top of Projects (the first 3 by `order` show)
    - `order`: lower numbers appear first
    - `hidden: true` keeps the file but leaves it off the site
    - optional `links:` list, for example:
@@ -39,6 +46,12 @@ If a required field is missing or misspelled, the build fails and the live site 
 ## Add your headshot
 
 Put a square photo at `public/headshot.jpg`, then in `src/data/site.ts` change `headshot: ''` to `headshot: 'headshot.jpg'`.
+
+## Turn on the contact form
+
+1. Go to https://web3forms.com and create an access key with the email address that should receive messages. The key arrives by email.
+2. Paste it into `web3formsKey: ''` in `src/data/site.ts`, between the quotes. The key is public by design, so it's safe to commit.
+3. Commit and push. Until a key is there, the Contact page shows an "Email me" button instead.
 
 ## Preview on your computer (optional)
 

@@ -1,26 +1,36 @@
 ---
 import Base from '../layouts/Base.astro';
-import { education } from '../data/site';
+import { profile, education } from '../data/site';
 import { url } from '../lib/url';
 ---
-<Base title="About" description="Who Aaron Scott is: restaurant operator, consultant, builder and explainer.">
-  <article class="prose">
+<Base title="About" description="Who Aaron Scott is: food industry professional with a background in politics and sales.">
+  <article class="prose about">
     <span class="kicker">About</span>
-    <h1>I like knowing why things work, and why they break.</h1>
+    <h1>{profile.tagline}</h1>
 
-    <p>I started at Qdoba as a server and spent about eight years working up through every role in the building: cook, shift supervisor, assistant GM, GM, then brand operations and new restaurant opening trainer. Along the way I built my approach around two ideas I still use every day: the Toyota Production System and Training Within Industry job instruction. Find the waste, write the standard, teach it so it sticks.</p>
+    <p>I started at Qdoba as a server and advanced through every role in the restaurant: cook, shift supervisor, assistant GM, GM, then brand operations and new restaurant opening trainer. That is where I learned the two methods that still guide my work: the Toyota Production System and Training Within Industry job instruction. Identify the waste, standardize the work, and train it until it holds without supervision.</p>
 
-    <p>Today I'm a Multi-Unit General Manager for two Freddy's Frozen Custard &amp; Steakburgers locations, and I run <a href={url('projects/backhouse-group/')}>Backhouse Group</a>, an operations consulting practice for restaurants that need SOPs, training systems and franchise infrastructure.</p>
+    <p>I am currently the Multi-Unit General Manager for two Freddy's Frozen Custard &amp; Steakburgers locations, and I lead <a href={url('projects/backhouse-group/')}>Backhouse Group</a>, the parent company for my ventures and my operations consulting practice.</p>
 
-    <p>My degree is in political science ({education.school}, {education.year}), and I've worked in sales, political organizing and community outreach. That's where <a href={url('projects/drbreakdown/')}>drBreakdown</a> comes from: a channel about what breaks and why, starting with politics and policy.</p>
+    <p>My background extends beyond restaurants. I hold a degree in political science from {education.school}, with minors in policy studies and global security and diplomacy. I have coordinated phone banks, interned for a county party, co-authored policy research, and sold subscriptions, donations and catering contracts, door to door and business to business. Politics trained me to diagnose where systems fail; sales taught me that a solution only matters if people adopt it.</p>
 
-    <p>I also build things: AI tools, a mobile app, a restaurant management game, and an AI-run media channel. Some are live, most are in progress, and every <a href={url('projects/')}>project page</a> says plainly which is which.</p>
+    <blockquote class="pull">
+      <p>“It was a constant wondering if the agent could complete the task, and when it did we asked, what else?”</p>
+      <cite>On building the inventory agent at Bang Cookies</cite>
+    </blockquote>
 
-    <h2>What I care about</h2>
+    <p>I also build software and AI systems, using agents to handle repetitive work so people can focus on improvement. At Bang Cookies that meant an inventory agent that saved a full workday every week. Independently, I have built a <a href={url('projects/trade-bot/')}>trading agent</a>, an iPhone app, a restaurant game and an AI-run media channel. Each <a href={url('projects/')}>project page</a> states its current status.</p>
+
+    <p>Through <a href={url('projects/drbreakdown/')}>drBreakdown</a>, my YouTube channel, I explain why institutions and systems break down, beginning with politics and policy.</p>
+
+    <h2>Principles</h2>
     <ul>
-      <li><strong>Systems over heroics.</strong> A store shouldn't depend on one person having a good day.</li>
-      <li><strong>Training that transfers.</strong> If the team can't do it without me, I didn't teach it.</li>
-      <li><strong>Saying what's real.</strong> Built, in progress, or just an idea. Never one passed off as another.</li>
+      <li><strong>Diagnose before prescribing.</strong> Assess the full operation before changing any part of it.</li>
+      <li><strong>Train leaders alongside their teams.</strong> Every store retraining I led included its General Manager.</li>
+      <li><strong>Report status accurately.</strong> Completed, in progress and planned work are always labeled as such.</li>
     </ul>
+
+    <h2>Outside of work</h2>
+    <p>I read widely across politics, history, science and business.</p>
   </article>
 </Base>

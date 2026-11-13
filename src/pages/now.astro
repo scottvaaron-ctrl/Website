@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { now } from '../data/site';
+---
+<Base title="Now" description="What Aaron Scott is working on right now.">
+  <article class="prose">
+    <span class="kicker">Now · Updated {now.updated}</span>
+    <h1>Current focus</h1>
+    <ol class="now-list">{now.items.map((i) => <li>{i}</li>)}</ol>
+    <p class="muted">This is a <a href="https://nownownow.com/about">now page</a>. It is updated as my work changes.</p>
+  </article>
+</Base>
