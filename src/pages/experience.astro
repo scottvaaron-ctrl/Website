@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import { experience, additionalExperience, education, skills } from '../data/site';
+---
+<Base title="Experience" description="Aaron Scott's operations, training and business development experience.">
+  <span class="kicker">Experience</span>
+  <h1>Experience</h1>
+  <p class="tagline muted" style="max-width:none">Operations and business development: training programs, SOP architecture, openings, turnarounds, and AI-driven automation.</p>
+
+  <ul class="timeline" style="margin-top:2rem">
+    {experience.map((e) => (
+      <li>
+        <span class="meta">{e.period}</span>
+        <div>
+          <h3>{e.title}</h3>
+          <p class="org">{e.org}</p>
+          {e.ladder && <p class="ladder">{e.ladder}</p>}
+          <ul>{e.points.map((pt) => <li>{pt}</li>)}</ul>
+        </div>
+      </li>
+    ))}
+    <li>
+      <span class="meta">Earlier</span>
+      <div><h3>Additional experience</h3><p class="muted">{additionalExperience}</p></div>
+    </li>
+  </ul>
+
+  <section class="section">
+    <h2>Education</h2>
+    <p><strong>{education.degree}</strong>, {education.school}, {education.year}</p>
+    <p class="muted">Certifications: {education.certs.join(' · ')}</p>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      {skills.map((s) => (
+        <div>
+          <h3>{s.group}</h3>
+          <ul>{s.items.map((i) => <li class="tag">{i}</li>)}</ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

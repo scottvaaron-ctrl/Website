@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { profile, proof, paths, experience } from '../data/site';
+import { url } from '../lib/url';
+
+const featured = (await getCollection('projects', ({ data }) => data.featured && !data.hidden))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+const initials = profile.name.split(' ').map((p) => p[0]).join('');
+---
+<Base>
+  <section class="hero wide">
+    <div>
+      <span class="kicker">Operations · Consulting · Builder</span>
+      <h1>{profile.name}</h1>
+      <p class="tagline">{profile.tagline}</p>
+      <ul class="roles">{profile.roles.map((r) => <li class="tag">{r}</li>)}</ul>
+    </div>
+    {profile.headshot
+      ? <img class="headshot" src={url(profile.headshot)} alt={`Photo of ${profile.name}`} width="176" height="176" />
+      : <div class="headshot" aria-hidden="true">{initials}</div>}
+  </section>
+
+  <section class="section wide" aria-labelledby="start">
+    <h2 id="start" class="kicker">Start here</h2>
+    <div class="paths">
+      {paths.map((p) => (
+        <a class="path" href={url(p.href)}>
+          <span class="kicker">{p.kicker}</span>
+          <h3>{p.title}</h3>
+          <p>{p.text}</p>
+          <span class="cta">{p.cta} →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="section wide" aria-labelledby="proof">
+    <h2 id="proof" class="kicker">By the numbers</h2>
+    <div class="proof">
+      {proof.map((n) => <div><strong>{n.value}</strong><span>{n.label}</span></div>)}
+    </div>
+  </section>
+
+  <section class="section wide" aria-labelledby="work">
+    <div class="section-head">
+      <h2 id="work">Selected work</h2>
+      <a class="mono" href={url('projects/')}>All projects →</a>
+    </div>
+    <div class="cards">{featured.map((p) => <ProjectCard project={p} />)}</div>
+  </section>
+
+  <section class="section" aria-labelledby="now">
+    <div class="section-head">
+      <h2 id="now">Experience</h2>
+      <a class="mono" href={url('experience/')}>Full experience →</a>
+    </div>
+    <ul class="timeline">
+      {experience.slice(0, 3).map((e) => (
+        <li>
+          <span class="meta">{e.period}</span>
+          <div><h3>{e.title}</h3><p class="org" style="margin:0">{e.org}</p></div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section" aria-labelledby="contact">
+    <h2 id="contact">Let's talk</h2>
+    <p class="muted">Hiring, consulting, collaborating, or just curious about something I built.</p>
+    <a class="button" href={`mailto:${profile.email}`}>Email me</a>
+  </section>
+</Base>

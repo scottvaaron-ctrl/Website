@@ -1,0 +1,16 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { url } from '../lib/url';
+
+interface Props { project: CollectionEntry<'projects'> }
+const { project } = Astro.props;
+const d = project.data;
+---
+<a class="card" href={url(`projects/${project.id}/`)} data-category={d.category}>
+  <div class="card-top">
+    <span class="kicker" style="margin:0">{d.category}</span>
+    <span class="status" data-s={d.status}>{d.status}</span>
+  </div>
+  <h3>{d.title}</h3>
+  <p>{d.summary}</p>
+</a>

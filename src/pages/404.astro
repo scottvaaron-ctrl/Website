@@ -1,0 +1,9 @@
+---
+import Base from '../layouts/Base.astro';
+import { url } from '../lib/url';
+---
+<Base title="Page not found">
+  <span class="kicker">404</span>
+  <h1>That page broke.</h1>
+  <p class="tagline">Fitting, given the channel. <a href={url('')}>Head back home</a>.</p>
+</Base>

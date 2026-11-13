@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { education } from '../data/site';
+import { url } from '../lib/url';
+---
+<Base title="About" description="Who Aaron Scott is: restaurant operator, consultant, builder and explainer.">
+  <article class="prose">
+    <span class="kicker">About</span>
+    <h1>I like knowing why things work, and why they break.</h1>
+
+    <p>I started at Qdoba as a server and spent about eight years working up through every role in the building: cook, shift supervisor, assistant GM, GM, then brand operations and new restaurant opening trainer. Along the way I built my approach around two ideas I still use every day: the Toyota Production System and Training Within Industry job instruction. Find the waste, write the standard, teach it so it sticks.</p>
+
+    <p>Today I'm a Multi-Unit General Manager for two Freddy's Frozen Custard &amp; Steakburgers locations, and I run <a href={url('projects/backhouse-group/')}>Backhouse Group</a>, an operations consulting practice for restaurants that need SOPs, training systems and franchise infrastructure.</p>
+
+    <p>My degree is in political science ({education.school}, {education.year}), and I've worked in sales, political organizing and community outreach. That's where <a href={url('projects/drbreakdown/')}>drBreakdown</a> comes from: a channel about what breaks and why, starting with politics and policy.</p>
+
+    <p>I also build things: AI tools, a mobile app, a restaurant management game, and an AI-run media channel. Some are live, most are in progress, and every <a href={url('projects/')}>project page</a> says plainly which is which.</p>
+
+    <h2>What I care about</h2>
+    <ul>
+      <li><strong>Systems over heroics.</strong> A store shouldn't depend on one person having a good day.</li>
+      <li><strong>Training that transfers.</strong> If the team can't do it without me, I didn't teach it.</li>
+      <li><strong>Saying what's real.</strong> Built, in progress, or just an idea. Never one passed off as another.</li>
+    </ul>
+  </article>
+</Base>

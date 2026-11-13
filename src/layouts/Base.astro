@@ -1,0 +1,77 @@
+---
+// Fonts are bundled with the site (no Google Fonts request). The browser only
+// downloads the files the active theme actually uses.
+import '@fontsource-variable/fraunces';
+import '@fontsource/source-serif-4/400.css';
+import '@fontsource/source-serif-4/400-italic.css';
+import '@fontsource/source-serif-4/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource-variable/inter';
+import '@fontsource/space-grotesk/500.css';
+import '@fontsource/space-grotesk/700.css';
+import '../styles/global.css';
+import { THEME, profile } from '../data/site';
+import { url } from '../lib/url';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+const { title, description = profile.tagline } = Astro.props;
+const pageTitle = title ? `${title} · ${profile.name}` : `${profile.name} · Operations, consulting, and things I build`;
+const path = Astro.url.pathname.replace(import.meta.env.BASE_URL, '/').replace(/\/+$/, '/') || '/';
+
+const nav = [
+  { href: '', label: 'Home' },
+  { href: 'about/', label: 'About' },
+  { href: 'experience/', label: 'Experience' },
+  { href: 'projects/', label: 'Projects' },
+  { href: 'contact/', label: 'Contact' },
+];
+const isActive = (href: string) => (href === '' ? path === '/' : path.startsWith('/' + href));
+
+---
+<!doctype html>
+<html lang="en" data-theme={THEME}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <link rel="icon" href={url('favicon.svg')} type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div class="shell">
+      <header class="side">
+        <a class="brand" href={url('')}>{profile.name}</a>
+        <p class="brand-sub">{profile.roles[0]} · {profile.roles[1]}</p>
+        <nav aria-label="Main">
+          <ul>
+            {nav.map((n, i) => (
+              <li>
+                <a href={url(n.href)} aria-current={isActive(n.href) ? 'page' : undefined}>
+                  <span class="nav-num">0{i + 1}</span>
+                  {n.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <p class="side-links">
+          <a href={`mailto:${profile.email}`}>Email</a>
+          <a href={profile.github} rel="me">GitHub</a>
+        </p>
+      </header>
+      <main id="main">
+        <slot />
+        <footer class="foot">
+          <p>© {new Date().getFullYear()} {profile.name}. Built with Astro, hosted on GitHub Pages.</p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

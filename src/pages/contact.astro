@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import { profile } from '../data/site';
+---
+<Base title="Contact" description="How to reach Aaron Scott.">
+  <span class="kicker">Contact</span>
+  <h1>Get in touch</h1>
+  <p class="tagline">Hiring for an operations role, looking for help with your restaurant, or want to talk about something I built? Email is the fastest way to reach me.</p>
+  <p><a class="button" href={`mailto:${profile.email}`}>{profile.email}</a></p>
+  <p class="muted"><a href={profile.github}>GitHub</a></p>
+</Base>
