@@ -323,6 +323,9 @@ main > .foot { max-width: 72rem; }
 .placeholder-btn { background: transparent; color: var(--muted); border: 1px dashed var(--muted); cursor: default; }
 .placeholder-photo { border: 2px dashed var(--muted); font-size: 0.85rem; text-align: center; line-height: 1.3; font-family: var(--mono); }
 @media (max-width: 759px) { .headshot { width: 6.5rem; height: 6.5rem; font-size: 1.6rem; order: -1; } .display { font-size: 3.2rem; } }
+/* The real photo shows whole, as a small rounded portrait instead of a circle. */
+img.headshot { width: 8.25rem; height: 11rem; border-radius: 12px; object-fit: cover; object-position: top; }
+@media (max-width: 759px) { img.headshot { width: 4.875rem; height: 6.5rem; } }
 
 /* The project filter hides cards with the hidden attribute; .card sets display:flex, so force it. */
 [hidden] { display: none !important; }

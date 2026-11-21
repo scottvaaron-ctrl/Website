@@ -22,7 +22,7 @@ const timeline = [ops[0], biz[0], ops[1], ops[2]];
       <ul class="roles">{profile.roles.map((r) => <li class="tag">{r}</li>)}</ul>
     </div>
     {profile.headshot
-      ? <img class="headshot" src={url(profile.headshot)} alt={`Photo of ${profile.name}`} width="208" height="208" />
+      ? <img class="headshot" src={url(profile.headshot)} alt={`Photo of ${profile.name}`} width="600" height="800" />
       : SHOW_PLACEHOLDERS
         ? <div class="headshot placeholder-photo" role="img" aria-label="Photo placeholder">Photo<br />coming soon</div>
         : <div class="headshot" aria-hidden="true">{initials}</div>}
