@@ -19,11 +19,11 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/aaron-scott-63b716305/',
   twoTail: 'https://two-tail-technologies.github.io/Website/',
   // Put your photo at public/headshot.jpg and change this to 'headshot.jpg'.
-  headshot: '' as string,
+  headshot: 'headshot.jpg' as string,
   // Contact form: create a free Web3Forms access key at https://web3forms.com
   // with the email that should receive messages, then paste the key here.
   // While it's empty, the Contact page shows an email button instead of the form.
-  web3formsKey: '' as string,
+  web3formsKey: '99192cf7-6d1f-4723-a418-2a4f46f9e66f' as string,
   // Résumé download: put a PDF with no phone number or town at
   // public/files/aaron-scott-resume.pdf, then change this to 'files/aaron-scott-resume.pdf'.
   // While it's empty, no download button shows.
@@ -34,11 +34,29 @@ export const profile = {
 // once you fill it in; while a field is empty, nothing shows for it.
 // One paragraph per string, e.g. whyRestaurants: ['First paragraph.', 'Second paragraph.'].
 export const aboutAnswers = {
-  whyRestaurants: [] as string[], // Why restaurants?
-  trainingMoment: [] as string[], // A moment that shaped how you train people
-  whyPolitics: [] as string[], // Why politics?
-  goals: [] as string[], // What you're building toward (long-range goals, across industries)
-  outsideWork: [] as string[], // Who you are outside work (replaces the current one-line "Outside of work")
+  whyRestaurants: [
+    'The rush. When the tickets stack up and the whole team is moving together, time stops and everyone falls into a flow.',
+    'The people. Restaurants put me in front of new people every day, guests and team members alike, and many of those first meetings grow into deep relationships.',
+    'The chance to keep improving. There is always a way to set up a station smarter, make a handoff cleaner and get a little faster.',
+  ] as string[], // Why restaurants?
+  trainingMoment: [
+    'No single moment taught me to train people. I learned it from watching the people around me lead.',
+    'At home, I watched my father run his own business and my mother lead in an executive role. Between them, I saw what it takes to build something and what it takes to lead people inside something bigger.',
+    'At work, I had supervisors who took the time to mentor me. They are the reason I became the trainer I am today.',
+  ] as string[], // A moment that shaped how you train people
+  whyPolitics: [
+    'Because politics decides almost everything: how our houses look, what we eat, where we work and how we get there, the air we breathe, what we watch and the medicine we take.',
+  ] as string[], // Why politics?
+  goals: [
+    'Long term, I am building toward ownership: a group of businesses that keep producing value, and the freedom to choose my time, my place and my work.',
+    'Along the way, I want a career that matters, whether that means leading operations at the highest level, practicing law or shaping policy, and I want to use what I know about politics to do meaningful public work.',
+    'In the end, the goal is to leave the people who come after me in a stronger position than where I started.',
+  ] as string[], // What you're building toward (long-range goals, across industries)
+  outsideWork: [
+    'I read widely across politics, history, science and business.',
+    'I like staying active, with long Teddy Roosevelt-style walks, ice skating and hiking.',
+    'I also love trying new food, playing and writing music, and learning new skills whenever I can.',
+  ] as string[], // Who you are outside work (replaces the current one-line "Outside of work")
 };
 
 // Homepage numbers. Each one is in your resumes word for word.

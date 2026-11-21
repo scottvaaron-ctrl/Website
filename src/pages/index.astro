@@ -31,8 +31,39 @@ const timeline = [ops[0], biz[0], ops[1], ops[2]];
   <section class="band wide" aria-labelledby="proof">
     <h2 id="proof" class="kicker">By the numbers</h2>
     <div class="proof">
-      {proof.map((n) => <div><strong>{n.value}</strong><span>{n.label}</span></div>)}
+      {proof.map((n) => (
+        <div>
+          <strong><b class="sr-only">{n.value}</b><b aria-hidden="true" data-count>{n.value}</b></strong>
+          <span>{n.label}</span>
+        </div>
+      ))}
     </div>
+    <script>
+      // Numbers count up once when they scroll into view. Skipped for visitors
+      // who ask their device for reduced motion; the final number is always in the page.
+      const els = [...document.querySelectorAll<HTMLElement>('[data-count]')];
+      const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!still && 'IntersectionObserver' in window) {
+        const run = (el: HTMLElement) => {
+          const m = el.textContent!.match(/^(\D*)([\d,]+)(\D*)$/);
+          if (!m) return;
+          const [, pre, num, post] = m;
+          const end = Number(num.replace(/,/g, ''));
+          const start = performance.now();
+          const step = (t: number) => {
+            const p = Math.min(Math.max((t - start) / 1200, 0), 1);
+            const v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+            el.textContent = pre + v.toLocaleString('en-US') + post;
+            if (p < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        };
+        const io = new IntersectionObserver((entries) => {
+          for (const e of entries) if (e.isIntersecting) { io.unobserve(e.target); run(e.target as HTMLElement); }
+        }, { threshold: 0.5 });
+        els.forEach((el) => io.observe(el));
+      }
+    </script>
   </section>
 
   <section class="section wide" aria-labelledby="start">
