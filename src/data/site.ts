@@ -19,6 +19,21 @@ export const profile = {
   // with the email that should receive messages, then paste the key here.
   // While it's empty, the Contact page shows an email button instead of the form.
   web3formsKey: '' as string,
+  // Résumé download: put a PDF with no phone number or town at
+  // public/files/aaron-scott-resume.pdf, then change this to 'files/aaron-scott-resume.pdf'.
+  // While it's empty, no download button shows.
+  resume: '' as string,
+};
+
+// Your own answers for the About page. Each one shows as its own short section
+// once you fill it in; while a field is empty, nothing shows for it.
+// One paragraph per string, e.g. whyRestaurants: ['First paragraph.', 'Second paragraph.'].
+export const aboutAnswers = {
+  whyRestaurants: [] as string[], // Why restaurants?
+  trainingMoment: [] as string[], // A moment that shaped how you train people
+  whyPolitics: [] as string[], // Why politics?
+  goals: [] as string[], // What you're building toward (long-range goals, across industries)
+  outsideWork: [] as string[], // Who you are outside work (replaces the current one-line "Outside of work")
 };
 
 // Homepage numbers. Each one is in your resumes word for word.

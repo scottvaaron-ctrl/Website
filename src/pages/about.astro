@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { profile, education } from '../data/site';
+import { profile, education, aboutAnswers as a } from '../data/site';
 import { url } from '../lib/url';
 ---
 <Base title="About" description="Who Aaron Scott is: food industry professional with a background in politics and sales.">
@@ -24,6 +24,11 @@ import { url } from '../lib/url';
 
     <p>Through <a href={url('projects/drbreakdown/')}>Breakdown</a>, my YouTube channel, I explain why institutions and systems break down, beginning with politics and policy.</p>
 
+    {a.whyRestaurants.length > 0 && <><h2>Why restaurants</h2>{a.whyRestaurants.map((p) => <p>{p}</p>)}</>}
+    {a.trainingMoment.length > 0 && <><h2>How I learned to train</h2>{a.trainingMoment.map((p) => <p>{p}</p>)}</>}
+    {a.whyPolitics.length > 0 && <><h2>Why politics</h2>{a.whyPolitics.map((p) => <p>{p}</p>)}</>}
+    {a.goals.length > 0 && <><h2>Where I’m headed</h2>{a.goals.map((p) => <p>{p}</p>)}</>}
+
     <h2>Principles</h2>
     <ul>
       <li><strong>Diagnose before prescribing.</strong> Assess the full operation before changing any part of it.</li>
@@ -32,6 +37,8 @@ import { url } from '../lib/url';
     </ul>
 
     <h2>Outside of work</h2>
-    <p>I read widely across politics, history, science and business.</p>
+    {a.outsideWork.length > 0
+      ? a.outsideWork.map((p) => <p>{p}</p>)
+      : <p>I read widely across politics, history, science and business.</p>}
   </article>
 </Base>

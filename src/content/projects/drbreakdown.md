@@ -4,6 +4,10 @@ summary: A YouTube channel explaining why laws, institutions and systems fail, b
 category: Media
 status: In development
 statusNote: Pre-launch
+# Once the channel is public, add its link here, e.g.
+# links:
+#   - label: Watch on YouTube
+#     url: https://www.youtube.com/@yourchannel
 role: Creator, writer, host
 period: 2026 – present
 tags: [Media, Policy]

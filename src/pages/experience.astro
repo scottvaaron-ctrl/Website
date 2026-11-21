@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import { tracks, earlier, education, skills } from '../data/site';
+import { tracks, earlier, education, skills, profile } from '../data/site';
+import { url } from '../lib/url';
 ---
 <Base title="Experience" description="Aaron Scott's experience in restaurant operations, business development, and civic and policy work.">
   <header class="page-head wide">
@@ -10,6 +11,7 @@ import { tracks, earlier, education, skills } from '../data/site';
       {tracks.map((t, i) => <a href={`#${t.id}`}><span class="nav-num" aria-hidden="true">0{i + 1}</span>{t.name}</a>)}
       <a href="#education"><span class="nav-num" aria-hidden="true">0{tracks.length + 1}</span>Education</a>
     </nav>
+    {profile.resume && <p><a class="button" href={url(profile.resume)}>Download résumé (PDF)</a></p>}
   </header>
 
   {tracks.map((t, i) => (
