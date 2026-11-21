@@ -8,9 +8,10 @@ export const profile = {
   name: 'Aaron Scott',
   tagline:
     'Food service operations leader with a background in politics and sales. I identify where businesses break down and build the systems that fix them.',
-  roles: ['Multi-Unit General Manager', 'Founder & CEO, Backhouse Group', 'AI Systems Builder', 'Creator, drBreakdown'],
+  roles: ['Multi-Unit General Manager', 'Founder & CEO, Backhouse Group', 'AI Systems Builder', 'Creator, Breakdown'],
   email: 'scottvaaron@gmail.com',
   github: 'https://github.com/scottvaaron-ctrl',
+  linkedin: 'https://www.linkedin.com/in/aaron-scott-63b716305/',
   twoTail: 'https://two-tail-technologies.github.io/Website/',
   // Put your photo at public/headshot.jpg and change this to 'headshot.jpg'.
   headshot: '' as string,
@@ -28,7 +29,7 @@ export const proof = [
   { value: '2,000+', label: 'voters reached through phone banking' },
 ];
 
-// The three doors on the homepage, one per kind of visitor.
+// The four doors on the homepage, one per kind of visitor.
 export const paths = [
   {
     kicker: 'For employers',
@@ -47,9 +48,16 @@ export const paths = [
   {
     kicker: 'For collaborators',
     title: 'Projects and research',
-    text: 'AI agents, software, policy research and media, including drBreakdown.',
+    text: 'AI agents, software, policy research and media, including Breakdown.',
     href: 'projects/',
     cta: 'View projects',
+  },
+  {
+    kicker: 'For admissions and policy',
+    title: 'Civic and policy work',
+    text: 'A political science degree, county party and campaign work, and co-authored research on ID access for Passaic County’s homeless population.',
+    href: 'experience/#civic',
+    cta: 'View civic and policy work',
   },
 ];
 
@@ -84,9 +92,10 @@ export const tracks: { id: string; name: string; intro: string; jobs: Job[] }[] 
         org: 'Bang Cookies',
         title: 'Operations',
         period: '01/2026 – 08/2026',
-        highlights: ['~$2M in annual revenue', '~100 SOPs', '1 workday a week saved'],
+        highlights: ['~$2M in annual revenue', '~100 SOPs', '~$3,000/week catering line', '1 workday a week saved'],
         story: [
           'I joined on the sales and fundraising side and moved into operations, where I owned the New Jersey locations: about $2M in annual revenue, a team of 4, and daily coordination with department heads across the company.',
+          'On the business development side I built a field sales system (a Field Manual, an Outreach Tracker and a Route Planning SOP) for outreach to about 100 businesses a week. I designed, tested and launched a breakfast and bundle catering line on ezCater that generated approximately $3,000 per week (about $150K annualized), wrote a 90-day marketing plan for three product launches (Breakfast, Boba Tea and B2B Catering) with the email flows and lead-capture forms behind it, and led community and B2B fundraising across Monmouth County.',
           'I developed the company’s operating documentation: about 100 SOPs across 3 locations, including a 60+ document operating system spanning 11 departments for the American Dream store. I built procedure suites for high-constraint environments, including dishwashing and equipment at the Newark Airport (EWR) location, plus a Point of Sale SOP and a Daily Shift Checklist that standardized open to close.',
           'For the Las Vegas flagship opening I designed a multi-phase SOP system built to double as a franchise-readiness template for future units, and a hiring playbook tailored to the Las Vegas hospitality labor market.',
           'I advised the CEO directly on organizational structure, recommending that store-level decision authority move to unit managers and correcting misalignment between product and brand, from menu board design to pastry visual identity. I also built an AI inventory bot that flags low stock and triggers reorders at the factory and store level, saving roughly one full workday of manual ordering each week.',
@@ -129,7 +138,7 @@ export const tracks: { id: string; name: string; intro: string; jobs: Job[] }[] 
   {
     id: 'business',
     name: 'Business development',
-    intro: 'Business-to-business sales, field sales, fundraising and consulting.',
+    intro: 'Consulting, business-to-business and field sales.',
     jobs: [
       {
         org: 'Backhouse Group',
@@ -141,16 +150,6 @@ export const tracks: { id: string; name: string; intro: string; jobs: Job[] }[] 
           'Backhouse Group is the parent company for my ventures. Early-stage ventures are housed within Backhouse; as they mature, they are spun off into independent companies, with Backhouse moving into a holding-company role.',
           'Backhouse is also an operations consulting practice for small businesses. We rebuild or build standard operating procedures where they break down and train staff to follow them. I lead a two-person practice, set strategic direction, and review my partner’s work on parallel client projects. I conduct end-to-end assessments of staffing, customer engagement and workflow to identify and prioritize improvements.',
           'I also built the practice’s internal tools: a Discord-based AI consulting assistant and a lead research bot, both described on the Projects page.',
-        ],
-      },
-      {
-        org: 'Bang Cookies',
-        title: 'Marketing, Corporate Accounts & Fundraising',
-        period: '01/2026 – 08/2026',
-        highlights: ['~$3,000/week catering line', '~100 businesses a week'],
-        story: [
-          'I was hired to lead business development. I built a full field sales system (a Field Manual, an Outreach Tracker and a Route Planning SOP) that standardized prospecting, territory coverage and pipeline tracking for outreach to about 100 businesses a week.',
-          'I designed, tested and launched a breakfast and bundle catering line on ezCater, from concept to live listing. It generated approximately $3,000 per week (about $150K annualized). I wrote a 90-day marketing plan for three product launches (Breakfast, Boba Tea and B2B Catering) with the email flows and lead-capture forms behind it, and led community and B2B fundraising across Monmouth County, turning business and nonprofit leaders into long-term catering and fundraising partners.',
         ],
       },
       {
@@ -260,7 +259,7 @@ export const now = {
   items: [
     'Running two Freddy’s stores as Multi-Unit General Manager.',
     'Relaunching Backhouse Group’s consulting practice.',
-    'Writing the drBreakdown pilot, “Killing an Institution Without Repealing It.”',
+    'Writing the Breakdown pilot, “Killing an Institution Without Repealing It.”',
     'Building version 4 of my trading agent. Versions 1 through 3 traded paper money.',
     'Developing Consultobot with my brother through Two Tail Technologies.',
   ],

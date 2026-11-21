@@ -2,7 +2,7 @@
 title: AI Media Zero
 summary: An experiment testing whether an AI system starting with no budget can build an audience and refine its own media strategy.
 category: Media
-status: In development
+status: Paused
 role: Owner and builder
 period: 2026 – present
 tags: [AI agents, Media]

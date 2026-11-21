@@ -8,7 +8,7 @@ Built with [Astro](https://astro.build). Every push to `main` rebuilds and publi
 
 | To change… | Edit this file |
 |---|---|
-| Name, tagline, email, headshot, homepage numbers, the three homepage doors | `src/data/site.ts` |
+| Name, tagline, email, LinkedIn, headshot, homepage numbers, the four homepage doors | `src/data/site.ts` |
 | Experience, education, skills | `src/data/site.ts` |
 | The look (A editorial / B bold) | `THEME` at the top of `src/data/site.ts` |
 | About page text | `src/pages/about.astro` |
@@ -29,7 +29,7 @@ Built with [Astro](https://astro.build). Every push to `main` rebuilds and publi
    - `flow`: optional "How it works" steps, e.g. `[Read data, Decide, Act]`
    - `image`: optional picture in `public/images/`, e.g. `images/my-thing.jpg`, plus `imageAlt` describing it
    - `quote`: optional line in your own words, shown large
-   - `featured: true` puts it on the homepage and at the top of Projects (the first 3 by `order` show)
+   - `featured: true` puts it in the homepage "Featured work" section (the first 3 by `order` show)
    - `order`: lower numbers appear first
    - `hidden: true` keeps the file but leaves it off the site
    - optional `links:` list, for example:

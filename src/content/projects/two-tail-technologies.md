@@ -17,11 +17,6 @@ order: 17
 
 A shared studio for machine-learning, modeling and AI projects. Each idea is assessed for feasibility and value before development begins.
 
-## Current pipeline
+## Current work
 
-- **Consultobot:** the AI consultant, in development as a commercial product. [More](../consultobot/)
-- **Company profitability:** forecast profitability quarters ahead from public SEC filings.
-- **Development likelihood:** predict which land parcels will be developed, from public parcel, permit and imagery data.
-- **Stock trader:** a trading model evaluated against a buy-and-hold benchmark.
-
-The last three are at the idea stage.
+Our flagship is Howell, a survival city-builder that both people and a trained reinforcement-learning agent can play. Other projects range from forecasting and land-use prediction to [Consultobot](../consultobot/). The full, current list with each project's status is on the [Two Tail Technologies site](https://two-tail-technologies.github.io/Website/projects.html).

@@ -6,7 +6,6 @@ import ProjectCard from '../../components/ProjectCard.astro';
 const projects = (await getCollection('projects', ({ data }) => !data.hidden)).sort(
   (a, b) => a.data.order - b.data.order,
 );
-const featured = projects.filter((p) => p.data.featured).slice(0, 3);
 const tags = [...new Set(projects.flatMap((p) => p.data.tags))].sort();
 const statusOrder = ['Live', 'Active', 'In development', 'Paused', 'Planned', 'Idea', 'Completed'];
 const statuses = statusOrder.filter((s) => projects.some((p) => p.data.status === s));
@@ -16,11 +15,6 @@ const statuses = statusOrder.filter((s) => projects.some((p) => p.data.status ==
     <span class="kicker">Projects</span>
     <h1>Projects</h1>
     <p class="tagline muted" style="max-width:none">Operations systems, AI agents, software, media and research. Each project is labeled with its current status.</p>
-
-    <section class="section" aria-labelledby="feat">
-      <h2 id="feat" class="kicker">Featured</h2>
-      <div class="cards cards-feature">{featured.map((p) => <ProjectCard project={p} large />)}</div>
-    </section>
 
     <section class="section" aria-labelledby="all">
       <div class="section-head">
