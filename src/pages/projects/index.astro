@@ -24,7 +24,7 @@ const statuses = statusOrder.filter((s) => projects.some((p) => p.data.status ==
 
     <section class="section" aria-labelledby="all">
       <div class="section-head">
-        <h2 id="all">All projects <span class="muted count" id="count">({projects.length})</span></h2>
+        <h2 id="all">All projects <span class="muted count" id="count" aria-live="polite">({projects.length})</span></h2>
       </div>
       <div class="filter-bar">
         <div class="filters" role="group" aria-label="Filter by tag">
@@ -39,7 +39,7 @@ const statuses = statusOrder.filter((s) => projects.some((p) => p.data.status ==
         </div>
       </div>
       <div class="cards" id="project-grid">{projects.map((p) => <ProjectCard project={p} />)}</div>
-      <p class="muted" id="empty" hidden>No projects match both filters.</p>
+      <p class="muted" id="empty" role="status" hidden>No projects match both filters.</p>
     </section>
   </div>
 

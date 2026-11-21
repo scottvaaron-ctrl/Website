@@ -135,6 +135,7 @@ export const tracks: { id: string; name: string; intro: string; jobs: Job[] }[] 
         org: 'Backhouse Group',
         title: 'Founder / CEO',
         period: '05/2026 – Present',
+        summary: 'Operations consulting for small businesses: SOPs rebuilt where they break down, and staff trained to follow them. Also the parent company for my ventures.',
         highlights: ['Two-person practice', 'Ventures + consulting'],
         story: [
           'Backhouse Group is the parent company for my ventures. Early-stage ventures are housed within Backhouse; as they mature, they are spun off into independent companies, with Backhouse moving into a holding-company role.',

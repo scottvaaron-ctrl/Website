@@ -38,7 +38,7 @@ const timeline = [ops[0], biz[0], ops[1], ops[2]];
     <div class="paths">
       {paths.map((p, i) => (
         <a class="path" href={url(p.href)}>
-          <span class="path-n">0{i + 1}</span>
+          <span class="path-n" aria-hidden="true">0{i + 1}</span>
           <span class="kicker">{p.kicker}</span>
           <h3>{p.title}</h3>
           <p>{p.text}</p>

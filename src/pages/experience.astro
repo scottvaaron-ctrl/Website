@@ -7,15 +7,15 @@ import { tracks, earlier, education, skills } from '../data/site';
     <span class="kicker">Experience</span>
     <h1>Professional experience</h1>
     <nav class="track-nav" aria-label="Jump to a track">
-      {tracks.map((t, i) => <a href={`#${t.id}`}><span class="nav-num">0{i + 1}</span>{t.name}</a>)}
-      <a href="#education"><span class="nav-num">0{tracks.length + 1}</span>Education</a>
+      {tracks.map((t, i) => <a href={`#${t.id}`}><span class="nav-num" aria-hidden="true">0{i + 1}</span>{t.name}</a>)}
+      <a href="#education"><span class="nav-num" aria-hidden="true">0{tracks.length + 1}</span>Education</a>
     </nav>
   </header>
 
   {tracks.map((t, i) => (
     <section class="track wide" id={t.id}>
       <div class="track-head">
-        <span class="track-num">0{i + 1}</span>
+        <span class="track-num" aria-hidden="true">0{i + 1}</span>
         <div>
           <h2>{t.name}</h2>
           <p class="muted">{t.intro}</p>
@@ -49,7 +49,7 @@ import { tracks, earlier, education, skills } from '../data/site';
 
   <section class="track wide" id="education">
     <div class="track-head">
-      <span class="track-num">0{tracks.length + 1}</span>
+      <span class="track-num" aria-hidden="true">0{tracks.length + 1}</span>
       <div><h2>Education</h2></div>
     </div>
     <article class="job">

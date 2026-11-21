@@ -19,7 +19,7 @@ Most restaurant games focus on cooking. Shift Boss focuses on management: the pl
 
 Scenarios are drawn from real restaurant operations, keeping the game authentic while remaining approachable.
 
-![The cast of employees and guests](/Website/images/shift-boss-crew.jpg)
+![The cast of employees and guests](../../assets/images/shift-boss-crew.jpg)
 
 ## Where it stands
 
