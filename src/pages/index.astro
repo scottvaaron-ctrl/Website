@@ -2,10 +2,10 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { profile, proof, paths, tracks, now } from '../data/site';
+import { profile, proof, paths, tracks, now, SHOW_PLACEHOLDERS } from '../data/site';
 import { url } from '../lib/url';
 
-const featured = (await getCollection('projects', ({ data }) => data.featured && !data.hidden))
+const featured = (await getCollection('projects', ({ data }) => data.featured && !data.hidden && (SHOW_PLACEHOLDERS || !data.placeholder)))
   .sort((a, b) => a.data.order - b.data.order)
   .slice(0, 3);
 const initials = profile.name.split(' ').map((p) => p[0]).join('');
@@ -23,7 +23,9 @@ const timeline = [ops[0], biz[0], ops[1], ops[2]];
     </div>
     {profile.headshot
       ? <img class="headshot" src={url(profile.headshot)} alt={`Photo of ${profile.name}`} width="208" height="208" />
-      : <div class="headshot" aria-hidden="true">{initials}</div>}
+      : SHOW_PLACEHOLDERS
+        ? <div class="headshot placeholder-photo" role="img" aria-label="Photo placeholder">Photo<br />coming soon</div>
+        : <div class="headshot" aria-hidden="true">{initials}</div>}
   </section>
 
   <section class="band wide" aria-labelledby="proof">

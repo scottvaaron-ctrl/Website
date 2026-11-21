@@ -25,6 +25,8 @@ const projects = defineCollection({
     featured: z.boolean().default(false), // show on the homepage
     order: z.number().default(100), // lower numbers appear first
     hidden: z.boolean().default(false), // true = keep the file but leave it off the site
+    placeholder: z.boolean().default(false), // true = only shown while SHOW_PLACEHOLDERS is on
+    placeholderLink: z.string().optional(), // button label shown as "coming soon" until links are added
   }),
 });
 

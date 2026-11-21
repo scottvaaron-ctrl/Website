@@ -2,8 +2,9 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
+import { SHOW_PLACEHOLDERS } from '../../data/site';
 
-const projects = (await getCollection('projects', ({ data }) => !data.hidden)).sort(
+const projects = (await getCollection('projects', ({ data }) => !data.hidden && (SHOW_PLACEHOLDERS || !data.placeholder))).sort(
   (a, b) => a.data.order - b.data.order,
 );
 const tags = [...new Set(projects.flatMap((p) => p.data.tags))].sort();

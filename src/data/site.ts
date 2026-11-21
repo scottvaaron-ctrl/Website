@@ -4,6 +4,11 @@
 // Which look the site uses: 'editorial' (A, cream) or 'bold' (B, dark navy).
 export const THEME: 'editorial' | 'bold' = 'editorial';
 
+// true = show dashed "placeholder" boxes where your photo, résumé, About answers,
+// channel link, writing samples and contact form will go. Set to false to hide
+// every placeholder at once; anything you have filled in still shows.
+export const SHOW_PLACEHOLDERS = true;
+
 export const profile = {
   name: 'Aaron Scott',
   tagline:

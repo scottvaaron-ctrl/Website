@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { profile } from '../data/site';
+import { profile, SHOW_PLACEHOLDERS } from '../data/site';
 import { url } from '../lib/url';
 const hasForm = profile.web3formsKey.trim().length > 0;
 ---
@@ -31,9 +31,27 @@ const hasForm = profile.web3formsKey.trim().length > 0;
         <button class="button" type="submit">Send message</button>
       </form>
     ) : (
-      <p><a class="button" href={`mailto:${profile.email}`}>Email me</a></p>
+      <>
+        <p><a class="button" href={`mailto:${profile.email}`}>Email me</a></p>
+        {SHOW_PLACEHOLDERS && (
+          <div class="placeholder">
+            <p style="margin-top:0">Placeholder: preview of the contact form. It isn’t switched on yet, so please use the email button above.</p>
+            <form class="form" aria-label="Contact form preview (not active)" onsubmit="return false">
+              <fieldset disabled style="border:0;padding:0;margin:0;display:grid;gap:1rem">
+                <label>Your name<input type="text" /></label>
+                <label>Your email<input type="email" /></label>
+                <label>Topic<select><option>Hiring</option><option>Consulting (Backhouse Group)</option><option>A project</option><option>Something else</option></select></label>
+                <label>Message<textarea rows="4"></textarea></label>
+                <button class="button" type="button">Send message</button>
+              </fieldset>
+            </form>
+          </div>
+        )}
+      </>
     )}
     <p class="muted">You can also find me on <a href={profile.linkedin}>LinkedIn</a>.</p>
-    {profile.resume && <p><a href={url(profile.resume)}>Download my résumé (PDF)</a></p>}
+    {profile.resume
+      ? <p><a href={url(profile.resume)}>Download my résumé (PDF)</a></p>
+      : SHOW_PLACEHOLDERS && <p class="placeholder">Placeholder: a résumé download link goes here.</p>}
   </div>
 </Base>

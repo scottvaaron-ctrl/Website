@@ -2,9 +2,10 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import { url } from '../../lib/url';
+import { SHOW_PLACEHOLDERS } from '../../data/site';
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects', ({ data }) => !data.hidden);
+  const projects = await getCollection('projects', ({ data }) => !data.hidden && (SHOW_PLACEHOLDERS || !data.placeholder));
   return projects.map((project) => ({ params: { id: project.id }, props: { project } }));
 }
 
@@ -51,6 +52,9 @@ const { Content } = await render(project);
       <p style="margin-top:2rem;display:flex;gap:0.75rem;flex-wrap:wrap">
         {d.links.map((l) => <a class="button" href={l.url}>{l.label}</a>)}
       </p>
+    )}
+    {d.links.length === 0 && d.placeholderLink && SHOW_PLACEHOLDERS && (
+      <p style="margin-top:2rem"><span class="button placeholder-btn" aria-disabled="true">{d.placeholderLink} (link coming soon)</span></p>
     )}
   </article>
 </Base>

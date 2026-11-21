@@ -1,6 +1,9 @@
 ---
 import Base from '../layouts/Base.astro';
-import { profile, education, aboutAnswers as a } from '../data/site';
+import { profile, education, aboutAnswers as a, SHOW_PLACEHOLDERS } from '../data/site';
+
+// Shows your answer, or a placeholder box while SHOW_PLACEHOLDERS is on.
+const ph = (q: string) => `Placeholder: your answer to “${q}” goes here.`;
 import { url } from '../lib/url';
 ---
 <Base title="About" description="Who Aaron Scott is: food industry professional with a background in politics and sales.">
@@ -24,10 +27,14 @@ import { url } from '../lib/url';
 
     <p>Through <a href={url('projects/drbreakdown/')}>Breakdown</a>, my YouTube channel, I explain why institutions and systems break down, beginning with politics and policy.</p>
 
-    {a.whyRestaurants.length > 0 && <><h2>Why restaurants</h2>{a.whyRestaurants.map((p) => <p>{p}</p>)}</>}
-    {a.trainingMoment.length > 0 && <><h2>How I learned to train</h2>{a.trainingMoment.map((p) => <p>{p}</p>)}</>}
-    {a.whyPolitics.length > 0 && <><h2>Why politics</h2>{a.whyPolitics.map((p) => <p>{p}</p>)}</>}
-    {a.goals.length > 0 && <><h2>Where I’m headed</h2>{a.goals.map((p) => <p>{p}</p>)}</>}
+    {[
+      { h: 'Why restaurants', q: 'Why restaurants?', v: a.whyRestaurants },
+      { h: 'How I learned to train', q: 'A moment that shaped how you train people', v: a.trainingMoment },
+      { h: 'Why politics', q: 'Why politics?', v: a.whyPolitics },
+      { h: 'Where I’m headed', q: 'What are you building toward?', v: a.goals },
+    ].map((s) => (s.v.length > 0
+      ? <><h2>{s.h}</h2>{s.v.map((p) => <p>{p}</p>)}</>
+      : SHOW_PLACEHOLDERS && <><h2>{s.h}</h2><p class="placeholder">{ph(s.q)}</p></>))}
 
     <h2>Principles</h2>
     <ul>
@@ -40,5 +47,6 @@ import { url } from '../lib/url';
     {a.outsideWork.length > 0
       ? a.outsideWork.map((p) => <p>{p}</p>)
       : <p>I read widely across politics, history, science and business.</p>}
+    {a.outsideWork.length === 0 && SHOW_PLACEHOLDERS && <p class="placeholder">{ph('Who are you outside work?')}</p>}
   </article>
 </Base>

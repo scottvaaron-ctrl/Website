@@ -11,6 +11,7 @@ Built with [Astro](https://astro.build). Every push to `main` rebuilds and publi
 | Name, tagline, email, LinkedIn, headshot, homepage numbers, the four homepage doors | `src/data/site.ts` |
 | Experience, education, skills | `src/data/site.ts` |
 | The look (A editorial / B bold) | `THEME` at the top of `src/data/site.ts` |
+| Show or hide the dashed "coming soon" placeholders | `SHOW_PLACEHOLDERS` near the top of `src/data/site.ts` |
 | About page text | `src/pages/about.astro`; your own answers go in `aboutAnswers` in `src/data/site.ts` |
 | Résumé download button | `resume` in `src/data/site.ts` (PDF in `public/files/`) |
 | A writing sample | copy `src/content/projects/writing-sample-template.md` |
