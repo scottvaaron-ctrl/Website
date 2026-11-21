@@ -1,6 +1,6 @@
 ---
 title: Backhouse Group
-summary: The parent company for my ventures and an operations consulting practice for small and mid-sized businesses.
+summary: The parent company for my ventures and an operations consulting practice for small businesses.
 category: Operations
 status: Active
 role: Founder / CEO
@@ -16,12 +16,12 @@ order: 1
 
 Backhouse Group serves two functions. First, it is the parent company for my ventures: early-stage ventures are housed within Backhouse, and as they mature they are spun off into independent companies, with Backhouse moving into a holding-company role. AI Media Zero, StreamBot, Debauchery and Shift Boss are currently housed there.
 
-Second, it is an operations consulting practice for small and mid-sized businesses.
+Second, it is an operations consulting practice for small businesses.
 
 ## What the consulting looks like
 
 - **Assessments.** End-to-end reviews of staffing, customer engagement and workflow to identify and prioritize improvements.
-- **Sales processes and SOPs.** For a local bar client, we redesigned the sales process and built standard operating procedures.
+- **SOPs.** Rebuilding or building standard operating procedures where they break down, and training staff to follow them.
 - **Training systems** built on TWI Job Instruction, so a skill gets taught the same way every time.
 
 It is a two-person practice. I set strategic direction and review my partner's work on parallel client projects.

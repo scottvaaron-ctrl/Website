@@ -40,7 +40,7 @@ export const paths = [
   {
     kicker: 'For businesses',
     title: 'Backhouse Group',
-    text: 'Operational assessments, SOP development and training systems for small and mid-sized businesses.',
+    text: 'Operational assessments, SOP development and staff training for small businesses.',
     href: 'projects/backhouse-group/',
     cta: 'Explore Backhouse Group',
   },
@@ -98,11 +98,11 @@ export const tracks: { id: string; name: string; intro: string; jobs: Job[] }[] 
         summary: 'Eight years from server to New Restaurant Opening Trainer: 4 openings and 20+ turnarounds across four markets.',
         period: '03/2018 – 05/2026',
         ladder: ['Server', 'Cook', 'Shift Supervisor', 'Assistant GM', 'General Manager', 'Brand Operations Specialist', 'New Restaurant Opening Trainer'],
-        highlights: ['4 openings', 'Sales doubled in 2 months', '20+ turnarounds', 'Labor cost up to −8%', 'Food cost up to −7%'],
+        highlights: ['20+ turnarounds', 'Labor cost up to −8%', 'Food cost up to −7%', 'Relaunch sales doubled in 2 months (avg.)', '4 openings'],
         story: [
           'I started as a server and advanced through each role shown above. As General Manager I managed 6–12 employees daily and oversaw operations, payroll and inventory.',
-          'Then I moved into openings. I opened 4 new restaurants, training each crew in the Toyota Production System and TWI Job Instruction before grand opening. I worked with store managers and marketing on opening specials and with local community organizations, and on average those stores doubled their sales within two months of opening.',
-          'Between openings, I led turnaround work at underperforming stores. I audited and retrained more than 20 underperforming stores across four markets, stores that averaged about $40,000 a week, with catering orders of $1,500 or more. I reworked their workflows, which cut labor cost by up to 8% and food cost by up to 7%.',
+          'Then I moved into brand operations. As Brand Operations Specialist I audited and retrained more than 20 underperforming stores across four markets, stores that averaged about $40,000 a week, with catering orders of $1,500 or more. I reworked their workflows, which cut labor cost by up to 8% and food cost by up to 7%. With store managers and marketing teams I relaunched each store through specials and community partnerships, and on average sales doubled within two months of retraining.',
+          'As New Restaurant Opening Trainer I opened 4 new restaurants, training each crew in the Toyota Production System and TWI Job Instruction before grand opening, and worked with store managers and marketing on opening specials and with local community organizations. Between openings, I continued audit and retraining work at underperforming stores.',
           'Every retraining included the store’s General Manager alongside the crew. Over time I trained about 5 District Managers and 12 General Managers and built each store’s action plan with its District Manager. After each retraining, I visited nearby businesses with complimentary meal cards to rebuild community awareness.',
         ],
       },
@@ -138,7 +138,7 @@ export const tracks: { id: string; name: string; intro: string; jobs: Job[] }[] 
         highlights: ['Two-person practice', 'Ventures + consulting'],
         story: [
           'Backhouse Group is the parent company for my ventures. Early-stage ventures are housed within Backhouse; as they mature, they are spun off into independent companies, with Backhouse moving into a holding-company role.',
-          'Backhouse is also an operations consulting practice for small and mid-sized businesses. For a local bar client, we redesigned the sales process and built standard operating procedures. I lead a two-person practice, set strategic direction, and review my partner’s work on parallel client projects. I conduct end-to-end assessments of staffing, customer engagement and workflow to identify and prioritize improvements.',
+          'Backhouse is also an operations consulting practice for small businesses. We rebuild or build standard operating procedures where they break down and train staff to follow them. I lead a two-person practice, set strategic direction, and review my partner’s work on parallel client projects. I conduct end-to-end assessments of staffing, customer engagement and workflow to identify and prioritize improvements.',
           'I also built the practice’s internal tools: a Discord-based AI consulting assistant and a lead research bot, both described on the Projects page.',
         ],
       },

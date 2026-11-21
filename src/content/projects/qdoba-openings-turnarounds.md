@@ -13,11 +13,11 @@ order: 8
 
 ## Openings
 
-I opened 4 new restaurants, training each crew in the Toyota Production System and TWI Job Instruction before grand opening. Together with store managers and marketing, I set up opening specials and connected with community organizations. On average those stores doubled their sales within two months.
+As New Restaurant Opening Trainer, I opened 4 new restaurants, training each crew in the Toyota Production System and TWI Job Instruction before grand opening. Together with store managers and marketing, I set up opening specials and connected with community organizations.
 
 ## Turnarounds
 
-Between openings, I led turnaround work at more than 20 underperforming stores across four markets. I audited each one, reworked its workflows and retrained the staff, cutting labor cost by up to 8% and food cost by up to 7%.
+As Brand Operations Specialist, I led turnaround work at more than 20 underperforming stores across four markets. I audited each one, reworked its workflows and retrained the staff, cutting labor cost by up to 8% and food cost by up to 7%. With store managers and marketing teams I then relaunched each store through specials and community partnerships; on average, sales doubled within two months of retraining. I continued this work between openings.
 
 ## How
 

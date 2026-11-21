@@ -163,8 +163,8 @@ main > .wide { max-width: 72rem; }
 .card p { color: var(--muted); font-size: 0.97rem; margin: 0; flex: 1; }
 .card-top { display: flex; justify-content: space-between; gap: 0.5rem; align-items: center; }
 .status { font-family: var(--mono); font-size: 0.72rem; padding: 0.15rem 0.5rem; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
-.status[data-s='Live'], .status[data-s='Active'], .status[data-s='Completed'] { color: #2f7d4f; }
-.status[data-s='In development'] { color: #b07a12; }
+.status[data-s='Live'], .status[data-s='Active'], .status[data-s='Completed'] { color: #276b43; }
+.status[data-s='In development'] { color: #8a5d0b; }
 .status[data-s='Paused'], .status[data-s='Planned'], .status[data-s='Idea'] { color: var(--muted); }
 [data-theme='bold'] .status[data-s='Live'], [data-theme='bold'] .status[data-s='Active'], [data-theme='bold'] .status[data-s='Completed'] { color: #6ee7a8; }
 [data-theme='bold'] .status[data-s='In development'] { color: var(--accent); }
@@ -306,3 +306,6 @@ main > .wide { max-width: 72rem; }
 .form .button { justify-self: start; border: 0; cursor: pointer; }
 .hp { display: none; }
 @media (max-width: 759px) { .headshot { width: 6.5rem; height: 6.5rem; font-size: 1.6rem; order: -1; } .display { font-size: 3.2rem; } }
+
+/* The project filter hides cards with the hidden attribute; .card sets display:flex, so force it. */
+[hidden] { display: none !important; }
