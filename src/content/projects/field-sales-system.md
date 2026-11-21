@@ -3,6 +3,7 @@ title: Field sales system at Bang Cookies
 summary: A field manual, outreach tracker and route planning SOP for reaching about 100 businesses a week.
 category: Operations
 status: Completed
+hidden: true # duplicates the Experience page
 role: Builder
 period: 01/2026 – 08/2026
 tags: [Sales, Operations]

@@ -3,6 +3,7 @@ title: Openings and turnarounds at Qdoba
 summary: Opened 4 new restaurants and retrained 20+ underperforming stores across four markets.
 category: Operations
 status: Completed
+hidden: true # duplicates the Experience page
 role: New Restaurant Opening Trainer, Brand Operations Specialist
 period: 03/2018 – 05/2026
 tags: [Operations, Training]

@@ -3,6 +3,7 @@ title: SOP system at Bang Cookies
 summary: About 100 SOPs across 3 locations, including a 60+ document operating system for 11 departments.
 category: Operations
 status: Completed
+hidden: true # duplicates the Experience page
 role: Operations lead
 period: 01/2026 – 08/2026
 tags: [Operations, Franchise]
