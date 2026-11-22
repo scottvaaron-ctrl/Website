@@ -8,6 +8,9 @@ period: 05/2026 – present
 tags: [Consulting, Operations]
 tools: [TPS / Kaizen, TWI Job Instruction, SOP architecture]
 flow: [Assess, Diagnose, Standardize, Train, Audit]
+links:
+  - label: Visit Backhouse Group
+    url: https://scottvaaron-ctrl.github.io/Backhouse/
 featured: true
 order: 1
 ---

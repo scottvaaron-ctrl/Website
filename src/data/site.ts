@@ -17,6 +17,7 @@ export const profile = {
   email: 'scottvaaron@gmail.com',
   github: 'https://github.com/scottvaaron-ctrl',
   linkedin: 'https://www.linkedin.com/in/aaron-scott-63b716305/',
+  backhouse: 'https://scottvaaron-ctrl.github.io/Backhouse/',
   twoTail: 'https://two-tail-technologies.github.io/Website/',
   // Put your photo at public/headshot.jpg and change this to 'headshot.jpg'.
   headshot: 'headshot.jpg' as string,
